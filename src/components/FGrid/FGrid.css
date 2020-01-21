@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "led";
+  src: url("/fonts/led.ttf");
+}
+
+.message-center {
+  margin: auto;
+  font-family: "led" !important;
+  font-size: 60px !important;
+  margin-bottom: 150px !important;
+  width: 100%;
+  text-align: center;
+  color: red;
+}
