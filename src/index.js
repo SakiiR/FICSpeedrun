@@ -2,14 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { ThemeProvider } from "@material-ui/core/styles";
-import App from "./App";
+import FApp from "./components/FApp/FApp";
 import theme from "./theme";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 
 ReactDOM.render(
-  <ThemeProvider theme={theme}>
-    {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-    <CssBaseline />
-    <App />
-  </ThemeProvider>,
+  <Provider store={store}>
+    <ThemeProvider theme={theme}>
+      {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+      <CssBaseline />
+      <FApp />
+    </ThemeProvider>
+  </Provider>,
   document.querySelector("#root")
 );

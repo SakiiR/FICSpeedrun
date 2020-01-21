@@ -1,16 +1,16 @@
 import React from "react";
 import Container from "@material-ui/core/Container";
-import FBar from "./components/FBar/FBar";
-import FGrid from "./components/FGrid/FGrid";
-import "./App.css";
+import Bar from "../../containers/Bar/Bar";
+import Grid from "../../containers/Grid/Grid";
+import "./FApp.css";
 
-export default class App extends React.Component {
+export default class FApp extends React.Component {
   render() {
     return (
       <div>
-        <FBar />
+        <Bar />
         <Container className="my-container" maxWidth="xl">
-          <FGrid />
+          <Grid />
         </Container>
       </div>
     );
