@@ -19,8 +19,15 @@ class FTeamPaper extends React.Component {
 
     return (
       <div>
-        <Typography variant="h4">{team.name}</Typography>
-        <Paper elevation={6} className={classes.paper}>
+        <Typography variant="h2">
+          <font color="grey">
+            <b>{team.name}</b>
+          </font>{" "}
+          - (<font color="green">{team.solves}</font> /{" "}
+          <font color="red">{team.fails}</font>)
+          {team.lead && <span> - Leader</span>}
+        </Typography>
+        <Paper elevation={10} className={classes.paper}>
           {team.event === null && (
             <img
               src={Configuration.initial_gif}

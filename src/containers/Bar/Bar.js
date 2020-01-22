@@ -1,7 +1,6 @@
 import { connect } from "react-redux";
 
 import FBar from "../../components/FBar/FBar";
-import { checkSolves, triggerMessage } from "../../redux/actions";
 
 function mapStateToProps(state, ownProps) {
   return {
@@ -12,8 +11,9 @@ function mapStateToProps(state, ownProps) {
 function mapDispatchToProps(dispatch, ownProps) {
   return {
     actualize: () => {
-      dispatch(checkSolves(2));
-      dispatch(triggerMessage("Le joueur MachinTruc est passé prems !"));
+      // dispatch(checkLead());
+      // dispatch(checkSolves(2));
+      // dispatch(triggerMessage("Le joueur MachinTruc est passé prems !"));
       // dispatch(listTeams());
       // dispatch(triggerEvent(1, "fail"));
     }

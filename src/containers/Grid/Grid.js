@@ -1,6 +1,11 @@
 import { connect } from "react-redux";
 
-import { listTeams, checkSolves, checkFails } from "../../redux/actions";
+import {
+  listTeams,
+  checkSolves,
+  checkFails,
+  checkLead
+} from "../../redux/actions";
 import FGrid from "../../components/FGrid/FGrid";
 import Configuration from "../../configuration/config";
 
@@ -20,10 +25,10 @@ function mapDispatchToProps(dispatch, ownProps) {
       dispatch(listTeams());
     },
     tick: () => {
-      console.log("TIIIIIIIIIIIIIIICK");
       for (const id of Configuration.ctfd_ids) {
         dispatch(checkSolves(id));
         dispatch(checkFails(id));
+        dispatch(checkLead());
       }
     }
   };
