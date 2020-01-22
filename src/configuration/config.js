@@ -18,10 +18,10 @@ const Configuration = {
    * Events sur les teams
    */
   events: {
-    solve: { gifs: ["/gifs/oscars.gif"], duration: 9000 },
-    fail: { gifs: ["/gifs/spidey.gif"], duration: 9000 },
-    newlead: { gifs: ["/gifs/dab.gif"], duration: 9000 },
-    ninetys: { gifs: ["/gifs/ninetys1.webp"], duration: 9000 }
+    solve: { gifs: ["/gifs/oscars.gif"], duration: 15000 },
+    fail: { gifs: ["/gifs/spidey.gif"], duration: 15000 },
+    newlead: { gifs: ["/gifs/dab.gif"], duration: 15000 },
+    ninetys: { gifs: ["/gifs/ninetys1.webp"], duration: 15000 }
   },
 
   /**
@@ -40,7 +40,7 @@ const Configuration = {
   /**
    * Durée de l'afficha des messages
    */
-  message_duration: 9000,
+  message_duration: 15000,
 
   /**
    * Tick duration: le temps entre chaque check :)
