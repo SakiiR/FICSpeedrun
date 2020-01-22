@@ -7,7 +7,7 @@ const Configuration = {
   /**
    * La step à laquelle on est actuallement (affiché dans le title)
    */
-  step: 0,
+  step: "FIC Gala Speedrun by Hexpresso",
 
   /**
    * ID des teams sur le CTFd
