@@ -6,11 +6,11 @@ import {
   Toolbar,
   IconButton,
   Typography,
-  Button,
   withStyles,
   LinearProgress
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
+import FCopyright from "../FCopyright/FCopyright";
 
 const styles = theme => ({
   root: {
@@ -26,7 +26,7 @@ const styles = theme => ({
 
 class FBar extends React.Component {
   render() {
-    const { classes, actualize, loading } = this.props;
+    const { classes, loading } = this.props;
     return (
       <AppBar position="static">
         <Toolbar>
@@ -38,12 +38,10 @@ class FBar extends React.Component {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h4" className={classes.title}>
             Speedrun - Step {Configuration.step}
           </Typography>
-          <Button color="inherit" onClick={actualize}>
-            Actualiser
-          </Button>
+          <FCopyright />
         </Toolbar>
         {loading && <LinearProgress />}
       </AppBar>
@@ -53,7 +51,6 @@ class FBar extends React.Component {
 
 FBar.propTypes = {
   classes: PropTypes.object.isRequired,
-  actualize: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired
 };
 
