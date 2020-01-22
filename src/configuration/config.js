@@ -20,7 +20,7 @@ const Configuration = {
   events: {
     solve: { gifs: ["/gifs/oscars.gif"], duration: 9000 },
     fail: { gifs: ["/gifs/spidey.gif"], duration: 9000 },
-    godlike: { gifs: ["/gifs/dab.gif"], duration: 9000 },
+    newlead: { gifs: ["/gifs/dab.gif"], duration: 9000 },
     ninetys: { gifs: ["/gifs/ninetys1.webp"], duration: 9000 }
   },
 
@@ -45,7 +45,18 @@ const Configuration = {
   /**
    * Tick duration: le temps entre chaque check :)
    */
-  tick_duration: 5000
+  tick_duration: 5000,
+
+  /**
+   * Messages affichés en haut lors des events
+   */
+  messages: {
+    solve: team_name => `Le joueur ${team_name} vient de flag !!🤯🤯🤯`,
+    fail: team_name =>
+      `Le joueur ${team_name} n'arrive pas à entrer un flag correctement ...🤷🏼‍♂️🤷🏼‍♂️🤷🏼‍♂️🤷🏼‍♂️`,
+    lead_change: team_name =>
+      `Le joueur ${team_name} prend le lead !!!!! 🥳🥳🥳🥳`
+  }
 };
 
 export default Configuration;

@@ -5,6 +5,7 @@ const STOP_EVENT = "STOP_EVENT";
 const STOP_LOADING = "STOP_LOADING";
 const CHECK_SOLVES_REQUEST = "CHECK_SOLVES_REQUEST";
 const CHECK_FAILS_REQUEST = "CHECK_FAILS_REQUEST";
+const CHECK_LEAD_REQUEST = "CHECK_LEAD_REQUEST";
 const STOP_MESSAGE = "STOP_MESSAGE";
 
 const actions = {
@@ -15,7 +16,8 @@ const actions = {
   CHECK_SOLVES_REQUEST,
   CHECK_FAILS_REQUEST,
   TRIGGER_MESSAGE,
-  STOP_MESSAGE
+  STOP_MESSAGE,
+  CHECK_LEAD_REQUEST
 };
 
 export const initialState = {
@@ -26,7 +28,7 @@ export const initialState = {
     team1: {
       solves: 0,
       fails: 0,
-      ctfdid: 1,
+      lead: false,
       event: null,
       name: "Player 1"
     },
@@ -34,7 +36,7 @@ export const initialState = {
     team2: {
       solves: 0,
       fails: 0,
-      ctfdid: 2,
+      lead: false,
       event: null,
       name: "Player 2"
     },
@@ -42,7 +44,7 @@ export const initialState = {
     team3: {
       solves: 0,
       fails: 0,
-      ctfdid: 3,
+      lead: false,
       event: null,
       name: "Player 3"
     },
@@ -50,7 +52,7 @@ export const initialState = {
     team4: {
       solves: 0,
       fails: 0,
-      ctfdid: 4,
+      lead: false,
       event: null,
       name: "Player 4"
     }

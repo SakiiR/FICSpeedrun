@@ -89,7 +89,7 @@ export const checkSolves = team_id => ({
     if (remoteSolves > localSolves) {
       const team_name = store.getState().general["team" + team_id].name;
       store.dispatch(triggerEvent(team_id, "solve"));
-      store.dispatch(triggerMessage(`Le joueur ${team_name} vient de flag !!`));
+      store.dispatch(triggerMessage(Configuration.messages.solve(team_name)));
     }
   }
 });
@@ -115,11 +115,46 @@ export const checkFails = team_id => ({
     if (remoteFails > localFails) {
       const team_name = store.getState().general["team" + team_id].name;
       store.dispatch(triggerEvent(team_id, "fail"));
-      store.dispatch(
-        triggerMessage(
-          `Le joueur ${team_name} n'arrive pas à entrer un flag correctement ...`
-        )
-      );
+      store.dispatch(triggerMessage(Configuration.messages.fail(team_name)));
+    }
+  }
+});
+
+export const checkLead = () => ({
+  type: actions.CHECK_LEAD_REQUEST,
+  __http: true,
+  __method: "checkLead",
+  __service: "scoreboard",
+  params: [],
+  reduce: (action, state) => {
+    const s = { ...state };
+
+    if (action.type.split("_").slice(-1)[0] !== "SUCCESS") return s;
+
+    for (const id of [1, 2, 3, 4]) {
+      const team = s["team" + id];
+      if (team.lead === true) actions.results["lead_before"] = team.id;
+      team.lead = false;
+    }
+
+    if (action.result.data.data.length > 0) {
+      const new_lead = action.result.data.data[0].account_id;
+      s["team" + new_lead].lead = true;
+    }
+
+    return s;
+  },
+  onSuccess: (store, result) => {
+    if (result.data.data.length > 0) {
+      const new_lead = result.data.data[0].account_id;
+      if (result["lead_before"] !== new_lead) {
+        // trigger event new lead
+        const team_name = store.getState().general["team" + new_lead].name;
+        store.dispatch(triggerEvent(new_lead, "newlead"));
+        store.dispatch(
+          triggerMessage(Configuration.messages.lead_change(team_name))
+        );
+      }
     }
   }
 });
