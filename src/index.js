@@ -6,14 +6,17 @@ import FApp from "./components/FApp/FApp";
 import theme from "./theme";
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
   <Provider store={store}>
-    <ThemeProvider theme={theme}>
-      {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-      <CssBaseline />
-      <FApp />
-    </ThemeProvider>
+    <Router>
+      <ThemeProvider theme={theme}>
+        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+        <CssBaseline />
+        <FApp />
+      </ThemeProvider>
+    </Router>
   </Provider>,
   document.querySelector("#root")
 );

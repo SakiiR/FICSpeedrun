@@ -23,8 +23,8 @@ class FTeamPaper extends React.Component {
           <font color="grey">
             <b>{team.name}</b>
           </font>{" "}
-          - (<font color="green">{team.solves}</font> /{" "}
-          <font color="red">{team.fails}</font>)
+          - <font color="green">{team.solves} Solves</font>{" "}
+          <font color="red">{team.fails} Fails</font>
           {team.lead && <span> - Leader</span>}
         </Typography>
         <Paper elevation={10} className={classes.paper}>
