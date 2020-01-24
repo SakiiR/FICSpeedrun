@@ -45,8 +45,7 @@ export default class FTimer extends React.Component {
       over: true
     });
     const { timestamp } = this.props;
-    const end = new Date(parseInt(timestamp) * 1000);
-    console.log(end);
+    const end = new Date(parseInt(timestamp));
 
     this.tick(end);
   }

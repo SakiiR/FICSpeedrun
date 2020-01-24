@@ -11,6 +11,7 @@ import {
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import FCopyright from "../FCopyright/FCopyright";
+import { Link } from "react-router-dom";
 
 const styles = theme => ({
   root: {
@@ -30,16 +31,18 @@ class FBar extends React.Component {
     return (
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            className={classes.menuButton}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h4" className={classes.title}>
-            Speedrun - Step {Configuration.step}
+          <Link to={"/"}>
+            <IconButton
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              className={classes.menuButton}
+            >
+              <MenuIcon />
+            </IconButton>
+          </Link>
+          <Typography variant="h6" className={classes.title}>
+            Speedrun - {Configuration.step}
           </Typography>
           {loading && <CircularProgress color="inherit" />}
           <FCopyright />

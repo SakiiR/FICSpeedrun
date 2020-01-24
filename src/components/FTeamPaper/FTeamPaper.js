@@ -8,7 +8,7 @@ const styles = theme => ({
   paper: {
     padding: theme.spacing(1),
     textAlign: "center",
-    height: "500px",
+    height: "300px",
     color: theme.palette.text.secondary
   }
 });
@@ -19,12 +19,17 @@ class FTeamPaper extends React.Component {
 
     return (
       <div>
-        <Typography variant="h2">
+        <Typography variant="h6">
           <font color="grey">
             <b>{team.name}</b>
           </font>{" "}
-          - <font color="green">{team.solves} Solves</font>{" "}
-          <font color="red">{team.fails} Fails</font>
+          -{" "}
+          <font color="green">
+            <b>{team.solves}</b> Solves
+          </font>{" "}
+          <font color="red">
+            <b>{team.fails}</b> Fails
+          </font>
           {team.lead && <span> - Leader</span>}
         </Typography>
         <Paper elevation={10} className={classes.paper}>
