@@ -7,7 +7,7 @@ import {
   IconButton,
   Typography,
   withStyles,
-  LinearProgress
+  CircularProgress
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import FCopyright from "../FCopyright/FCopyright";
@@ -41,9 +41,9 @@ class FBar extends React.Component {
           <Typography variant="h4" className={classes.title}>
             Speedrun - Step {Configuration.step}
           </Typography>
+          {loading && <CircularProgress color="inherit" />}
           <FCopyright />
         </Toolbar>
-        {loading && <LinearProgress />}
       </AppBar>
     );
   }
