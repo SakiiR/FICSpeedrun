@@ -76,11 +76,15 @@ const general = (state = {}, action) => {
         team1: { ...state.team1, lead: action.new_state.team1.lead },
         team2: { ...state.team2, lead: action.new_state.team2.lead },
         team3: { ...state.team3, lead: action.new_state.team3.lead },
-        team4: { ...state.team4, lead: action.new_state.team4.lead }
+        team4: { ...state.team4, lead: action.new_state.team4.lead },
+        teams: action.result.data.data
       };
       break;
     case "TRIGGER_MESSAGE":
       state = { ...state, message: action.message };
+      break;
+    case "GET_SCOREBOARD_SUCCESS":
+      state = { ...state, teams: action.result.data.data };
       break;
     case "STOP_MESSAGE":
       state = { ...state, message: "" };
