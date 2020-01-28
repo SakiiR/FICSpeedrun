@@ -56,7 +56,23 @@ const Configuration = {
       `Le joueur ${team_name} n'arrive pas à entrer un flag correctement ...🤷🏼‍♂️🤷🏼‍♂️🤷🏼‍♂️🤷🏼‍♂️`,
     lead_change: team_name =>
       `Le joueur ${team_name} prend le lead !!!!! 🥳🥳🥳🥳`
-  }
+  },
+
+  /**
+   * Sponsors page tiles :)
+   */
+  tileData: [
+    {
+      img: "/sponsors/manhattan.svg",
+      title: "Manhattan",
+      author: "author"
+    },
+    {
+      img: "/sponsors/synacktiv.png",
+      title: "Synacktiv",
+      author: "author"
+    }
+  ]
 };
 
 export default Configuration;
