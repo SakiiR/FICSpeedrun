@@ -28,8 +28,8 @@ function mapDispatchToProps(dispatch, ownProps) {
       for (const id of Configuration.ctfd_ids) {
         dispatch(checkSolves(id));
         dispatch(checkFails(id));
-        dispatch(checkLead());
       }
+      dispatch(checkLead());
     }
   };
 }

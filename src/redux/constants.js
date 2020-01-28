@@ -7,6 +7,7 @@ const CHECK_SOLVES_REQUEST = "CHECK_SOLVES_REQUEST";
 const CHECK_FAILS_REQUEST = "CHECK_FAILS_REQUEST";
 const CHECK_LEAD_REQUEST = "CHECK_LEAD_REQUEST";
 const STOP_MESSAGE = "STOP_MESSAGE";
+const GET_SCOREBOARD_REQUEST = "GET_SCOREBOARD_REQUEST";
 
 const actions = {
   STOP_LOADING,
@@ -17,13 +18,15 @@ const actions = {
   CHECK_FAILS_REQUEST,
   TRIGGER_MESSAGE,
   STOP_MESSAGE,
-  CHECK_LEAD_REQUEST
+  CHECK_LEAD_REQUEST,
+  GET_SCOREBOARD_REQUEST
 };
 
 export const initialState = {
   general: {
     loading: false,
     message: "",
+    teams: null,
 
     team1: {
       solves: 0,
