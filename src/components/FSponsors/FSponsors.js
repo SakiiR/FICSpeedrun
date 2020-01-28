@@ -4,6 +4,8 @@ import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
 import GridListTileBar from "@material-ui/core/GridListTileBar";
 
+import Configuration from "../../configuration/config";
+
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
@@ -28,23 +30,10 @@ const useStyles = makeStyles(theme => ({
 
 export default function FSponsors() {
   const classes = useStyles();
-  const tileData = [
-    {
-      img: "/sponsors/manhattan.svg",
-      title: "Image",
-      author: "author"
-    },
-    {
-      img: "/sponsors/synacktiv.png",
-      title: "Image",
-      author: "author"
-    }
-  ];
-
   return (
     <div className={classes.root}>
       <GridList className={classes.gridList} cols={2.5}>
-        {tileData.map(tile => (
+        {Configuration.tileData.map(tile => (
           <GridListTile key={tile.img}>
             <img src={tile.img} alt={tile.title} />
             <GridListTileBar
