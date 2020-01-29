@@ -81,6 +81,22 @@ const Configuration = {
     lead_change: team_name =>
       `${team_name} prend le lead !!!!! 🥳🥳🥳🥳`
   }
+
+  /**
+   * Sponsors page tiles :)
+   */
+  tileData: [
+    {
+      img: "/sponsors/manhattan.svg",
+      title: "Manhattan",
+      author: "author"
+    },
+    {
+      img: "/sponsors/synacktiv.png",
+      title: "Synacktiv",
+      author: "author"
+    }
+  ]
 };
 
 export default Configuration;

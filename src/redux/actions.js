@@ -120,6 +120,15 @@ export const checkFails = team_id => ({
   }
 });
 
+export const getScoreboard = () => ({
+  type: actions.GET_SCOREBOARD_REQUEST,
+  __http: true,
+  __method: "getScoreboard",
+  __service: "scoreboard",
+  params: [],
+  onSuccess: (store, result) => {}
+});
+
 export const checkLead = () => ({
   type: actions.CHECK_LEAD_REQUEST,
   __http: true,

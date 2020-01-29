@@ -31,7 +31,7 @@ class FBar extends React.Component {
     return (
       <AppBar position="static">
         <Toolbar>
-          <Link to={"/"}>
+          <Link to={"/"} style={{ textDecoration: "none", color: "white" }}>
             <IconButton
               edge="start"
               color="inherit"
