@@ -104,12 +104,12 @@ export const checkFails = team_id => ({
     const s = { ...state };
     if (action.type.split("_").slice(-1)[0] !== "SUCCESS") return s;
     action.result["fails_before"] = s["team" + team_id].fails;
-    s["team" + team_id].fails = action.result.data.data.length;
+    s["team" + team_id].fails = action.result.data.meta.count;
     return s;
   },
   onSuccess: (store, result) => {
     const localFails = result.fails_before;
-    const remoteFails = result.data.data.length;
+    const remoteFails = result.data.meta.count;
 
     // Dispatching great solve event
     if (remoteFails > localFails) {
