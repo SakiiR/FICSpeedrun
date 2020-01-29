@@ -21,7 +21,11 @@ const Configuration = {
     solve: { gifs: ["/gifs/oscars.gif"], duration: 15000 },
     fail: { gifs: ["/gifs/spidey.gif"], duration: 15000 },
     newlead: { gifs: ["/gifs/dab.gif"], duration: 15000 },
-    ninetys: { gifs: ["/gifs/ninetys1.webp"], duration: 15000 }
+    hurry: {
+      gifs: ["/gifs/tennis.gif"],
+      duration: 15000,
+      time_before_trigger: 15000 // Le temps pendant lequel le joueur ne flag pas
+    }
   },
 
   /**
@@ -55,7 +59,9 @@ const Configuration = {
     fail: team_name =>
       `Le joueur ${team_name} n'arrive pas à entrer un flag correctement ...🤷🏼‍♂️🤷🏼‍♂️🤷🏼‍♂️🤷🏼‍♂️`,
     lead_change: team_name =>
-      `Le joueur ${team_name} prend le lead !!!!! 🥳🥳🥳🥳`
+      `Le joueur ${team_name} prend le lead !!!!! 🥳🥳🥳🥳`,
+    hurry: team_name =>
+      `Le joueur ${team_name} n'a pas flag depuis un bon moment !`
   },
 
   /**
