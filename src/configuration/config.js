@@ -18,10 +18,34 @@ const Configuration = {
    * Events sur les teams
    */
   events: {
-    solve: { gifs: ["/gifs/oscars.gif"], duration: 15000 },
-    fail: { gifs: ["/gifs/spidey.gif"], duration: 15000 },
-    newlead: { gifs: ["/gifs/dab.gif"], duration: 15000 },
-    ninetys: { gifs: ["/gifs/ninetys1.webp"], duration: 15000 }
+    solve: { gifs: ["/gif/solves/baby.gif",
+	            "/gif/solves/basketball.gif",
+	            "/gif/solves/cap_girl.gif",
+	            "/gif/solves/clapping.gif",
+	            "/gif/solves/dab.gif",
+	            "/gif/solves/epic.gif",
+	            "/gif/solves/epic_scream.gif",
+	            "/gif/solves/esport.gif",
+	            "/gif/solves/fire.gif",
+	            "/gif/solves/hadoken.gif",
+	            "/gif/solves/laughfactory.gif",
+	            "/gif/solves/oscars.gif",
+	            "/gif/solves/sport_guy.gif",
+	            "/gif/solves/tennis.gif",
+	            "/gif/solves/thor.gif",
+	            "/gif/solves/trophy.gif"]
+	    , duration: 15000 },
+    fail: { gifs: ["/gifs/fails/facepalm.gif",
+                   "/gifs/fails/failure.gif",
+                   "/gifs/fails/barte.gif",
+                   "/gifs/fails/losse.gif"], duration: 15000 },
+    newlead: { gifs: ["/gifs/new_lead/leader.gif"], duration: 15000 },
+    ninetys: { gifs: ["/gifs/ninetys/cookie.gif",
+	              "/gifs/ninetys/go.gif",
+	              "/gifs/ninetys/letsgo.gif",
+	              "/gifs/ninetys/levelup.gif",
+	              "/gifs/ninetys/tellmore.gif",
+	              "/gifs/ninetys/unimpressed.gif"], duration: 15000 }
   },
 
   /**
@@ -45,17 +69,17 @@ const Configuration = {
   /**
    * Tick duration: le temps entre chaque check :)
    */
-  tick_duration: 5000,
+  tick_duration: 1000,
 
   /**
    * Messages affichés en haut lors des events
    */
   messages: {
-    solve: team_name => `Le joueur ${team_name} vient de flag !!🤯🤯🤯`,
+    solve: team_name => `FLAG de ${team_name} !!🤯🤯🤯`,
     fail: team_name =>
-      `Le joueur ${team_name} n'arrive pas à entrer un flag correctement ...🤷🏼‍♂️🤷🏼‍♂️🤷🏼‍♂️🤷🏼‍♂️`,
+      `${team_name} n'arrive pas à entrer un flag correctement ...🤷🏼‍♂️🤷🏼‍♂️🤷🏼‍♂️🤷🏼‍♂️`,
     lead_change: team_name =>
-      `Le joueur ${team_name} prend le lead !!!!! 🥳🥳🥳🥳`
+      `${team_name} prend le lead !!!!! 🥳🥳🥳🥳`
   }
 };
 
