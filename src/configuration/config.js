@@ -100,13 +100,13 @@ const Configuration = {
    */
   tileData: [
     {
-      img: "/sponsors/manhattan.svg",
-      title: "Manhattan",
+      img: "/sponsors/boite1.svg",
+      title: "Boite 1",
       author: "author"
     },
     {
-      img: "/sponsors/synacktiv.png",
-      title: "Synacktiv",
+      img: "/sponsors/boite2.png",
+      title: "Boite 2",
       author: "author"
     }
   ]
